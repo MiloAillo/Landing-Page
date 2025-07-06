@@ -5,9 +5,7 @@ My plan includes: <br>
 - Minimalist Design <br>
 - Parallax Effect <br>
 - 3D Card Effect
-
-<br> <br>
-
+ <br>
 Here is my design:
 [https://www.figma.com/design/38K4TDCg8NiQI1049MXklZ/Halaman-Mendarat?node-id=0-1&t=J3D69icylGNQiiV8-1](https://www.figma.com/design/38K4TDCg8NiQI1049MXklZ/Halaman-Mendarat?node-id=0-1&t=J3D69icylGNQiiV8-1)
 
