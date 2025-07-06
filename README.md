@@ -7,7 +7,7 @@ My plan includes: <br>
 - 3D Card Effect
  <br>
 Here is my design: <br>
-- [Figma](https://www.figma.com/design/38K4TDCg8NiQI1049MXklZ/Halaman-Mendarat?node-id=0-1&t=J3D69icylGNQiiV8-1)
+[Figma](https://www.figma.com/design/38K4TDCg8NiQI1049MXklZ/Halaman-Mendarat?node-id=0-1&t=J3D69icylGNQiiV8-1)
 
 # React + TypeScript + Vite
 
