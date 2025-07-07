@@ -1,0 +1,10 @@
+.page1 {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F7F7F7;
+  gap: 10px;
+  flex-wrap: wrap;
+}

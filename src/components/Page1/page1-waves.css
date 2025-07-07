@@ -1,0 +1,38 @@
+#wave1 {
+  background: url(/Vector-1.svg);
+  background-repeat: repeat-x;
+  
+  width: 100%;
+  height: 110.33px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: 10;
+  filter: drop-shadow(0px -0.5px 0.5px #2C2C2C);
+}
+
+#wave2 {
+  background: url(/Vector-2.svg);
+  background-repeat: repeat-x;
+  
+  width: 100%;
+  height: 145px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: 9;
+  filter: drop-shadow(0px -0.5px 0.6px #929AAB);
+}
+
+#wave3 {
+  background: url(/Vector.svg);
+  background-repeat: repeat-x;
+  
+  width: 100%;
+  height: 150px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: 8;
+  filter: drop-shadow(0px -0.5px 0.7px #EEEEEE);
+}
