@@ -25,7 +25,7 @@ a {
   flex-wrap: wrap;
 }
 
-.page1 .main-content {
+.main-content {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -165,32 +165,53 @@ a {
  background-position: center;
 }
 
+.wave {
+}
+
 #wave1 {
   background: url(/Vector-1.svg);
+  background-repeat: repeat-x;
+  
   width: 100%;
   height: 110.33px;
   bottom: 0;
   left: 0;
   position: absolute;
   z-index: 10;
+  filter: drop-shadow(0px -0.5px 0.5px #2C2C2C);
 }
 
 #wave2 {
   background: url(/Vector-2.svg);
+  background-repeat: repeat-x;
+  
   width: 100%;
   height: 145px;
   bottom: 0;
   left: 0;
   position: absolute;
   z-index: 9;
+  filter: drop-shadow(0px -0.5px 0.6px #929AAB);
 }
 
 #wave3 {
   background: url(/Vector.svg);
+  background-repeat: repeat-x;
+  
   width: 100%;
   height: 150px;
   bottom: 0;
   left: 0;
   position: absolute;
   z-index: 8;
+  filter: drop-shadow(0px -0.5px 0.7px #EEEEEE);
+}
+
+.page2 {
+  position: absolute;
+  top: calc(100vh - 15px);
+  width: 100vw;
+  height: 100vh;
+  background-color: #2C2C2C;
+  z-index: 11;
 }

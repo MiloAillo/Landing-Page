@@ -18,13 +18,14 @@ function App() {
   })
   const card = useTransform(scrollYProgress, [0, 1], ["0vh", "50vh"])
   const layer1 = useTransform(scrollYProgress, [0, 1], ["0vh", "0vh"])
-  const layer2 = useTransform(scrollYProgress, [0, 1], ["0vh", "5vh"])
-  const layer3 = useTransform(scrollYProgress, [0, 1], ["0vh", "7vh"])
+  const layer2 = useTransform(scrollYProgress, [0, 1], ["0vh", "7vh"])
+  const layer3 = useTransform(scrollYProgress, [0, 1], ["0vh", "10vh"])
+  const page2 = useTransform(scrollYProgress, [0, 1], ["0vh", "0vh"])
 
   return (
     <div>
       <div className='page1'>
-        <motion.div className='page1 main-content' style={{y: card}}>
+        <motion.div className='main-content' style={{y: card}}>
           <div className='content1 card'>
             <div className='pfp'></div>
             <div className='card-content'>
@@ -60,6 +61,7 @@ function App() {
         <motion.div className='wave' id='wave2' style={{y: layer2}}></motion.div>
         <motion.div className='wave' id='wave3'style={{y: layer3}}></motion.div>
       </div>
+      <motion.div className='page2' style={{y: page2}}></motion.div>
     </div>
   )
 }
