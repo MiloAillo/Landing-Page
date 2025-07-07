@@ -7,7 +7,7 @@
 
 body {
   box-sizing: border-box;
-  height: 200vh;
+  overflow-x: hidden;
 }
 
 a {
@@ -37,7 +37,7 @@ a {
 .content1 {
   width: 350px;
   height: 480px;
-  background-color: #2C2C2C;
+  background-color: #40444C;
   padding: 20px;
   box-sizing: border-box;
   border-radius: 15px;
@@ -165,9 +165,6 @@ a {
  background-position: center;
 }
 
-.wave {
-}
-
 #wave1 {
   background: url(/Vector-1.svg);
   background-repeat: repeat-x;
@@ -211,7 +208,7 @@ a {
   position: absolute;
   top: calc(100vh - 15px);
   width: 100vw;
-  height: 100vh;
+height: 100vh;
   background-color: #2C2C2C;
   z-index: 11;
 }
