@@ -26,11 +26,12 @@ a {
 }
 
 .page1 .main-content {
+  position: relative;
   display: flex;
   flex-direction: row;
   gap: 50px;
   align-items: center;
-  flex-wrap: wrapS;
+  flex-wrap: wrap;
 }
 
 .content1 {
