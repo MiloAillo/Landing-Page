@@ -1,3 +1,14 @@
+## Landing-Page-Project [Work In Progress]
+I am trying to make my own perosnal landing page. This is my biggest frontend project as of this moment. <br> <br>
+
+My plan includes: <br>
+- Minimalist Design <br>
+- Parallax Effect <br>
+- 3D Card Effect
+ <br>
+Here is my design: <br>
+[Figma](https://www.figma.com/design/38K4TDCg8NiQI1049MXklZ/Halaman-Mendarat?node-id=0-1&t=J3D69icylGNQiiV8-1)
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
