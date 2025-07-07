@@ -1,0 +1,9 @@
+.page3 {
+    width: 100%;
+    position: relative;
+    height: 100vh;
+}
+
+.page3-wave {
+    rotate: 180deg;
+}

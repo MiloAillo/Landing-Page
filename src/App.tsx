@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import Lenis from 'lenis'
 import Page1 from './containers/Page1/page1.container'
 import Page2 from './containers/Page2/page2-container'
+import Page3 from './containers/Page3/page3.container'
 import './App.css'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
     <div>
       <Page1 />
       <Page2 />
+      <Page3 />
     </div>
   )
 }
