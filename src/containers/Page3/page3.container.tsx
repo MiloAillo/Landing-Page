@@ -1,8 +1,8 @@
 import { MotionValue } from "motion"
 import { useScroll, useTransform } from "motion/react"
-import Page3Content from "../../components/Page3/page3-content"
 import "./page3.container.css"
 import Page1Waves from "../../components/Page1/page1-waves"
+import Page3Content from "../../components/Page3/page3-content"
 import { useRef } from "react"
 
 function Page3() {
@@ -18,14 +18,9 @@ function Page3() {
     return (
         <div className="page3">
             <div ref={ref} className="page3-wave">
-            <Page1Waves layer1={layer1} layer2={layer2} layer3={layer3} />
+                <Page1Waves layer1={layer1} layer2={layer2} layer3={layer3} />
             </div>
-            <Page3Content />
-            <Page3Content />
-            <Page3Content />
-            <Page3Content />
-            <Page3Content />
-            <Page3Content />
+            <Page3Content/>
         </div>
     )
 }

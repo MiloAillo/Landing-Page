@@ -1,0 +1,32 @@
+.page3-content {
+    margin-top: -37vh;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.tittle3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: bahnschrift, sans-serif;
+}
+
+.tittle3-dialogue {
+    font-size: 24px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.71);
+}
+
+.tittle3-name {
+    font-size: 64px;
+    font-weight: 400;
+    color: #2C2C2C;
+}
+
+.project-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+}

@@ -1,9 +1,12 @@
 .page3 {
     width: 100%;
     position: relative;
-    height: 100vh;
+    z-index: 0;
 }
 
 .page3-wave {
     rotate: 180deg;
+    position: relative;
+    height: 151px;
+    z-index: 1;
 }
