@@ -1,14 +1,25 @@
 import { motion, useScroll, useTransform } from 'motion/react'
+import Lenis from 'lenis'
 import './App.css'
+import { useEffect } from 'react'
 
 function App() {
-const { scrollYProgress } = useScroll({
-  offset: ["start start", "end end"]
-})
-const card = useTransform(scrollYProgress, [0, 1], ["0vh", "50vh"])
-const layer1 = useTransform(scrollYProgress, [0, 1], ["0vh", "0vh"])
-const layer2 = useTransform(scrollYProgress, [0, 1], ["0vh", "5vh"])
-const layer3 = useTransform(scrollYProgress, [0, 1], ["0vh", "7vh"])
+  useEffect(() => {
+    const lenis = new Lenis()
+    function raf(time: number) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+    requestAnimationFrame(raf)
+  }, [])
+
+  const { scrollYProgress } = useScroll({
+    offset: ["start start", "end end"]
+  })
+  const card = useTransform(scrollYProgress, [0, 1], ["0vh", "50vh"])
+  const layer1 = useTransform(scrollYProgress, [0, 1], ["0vh", "0vh"])
+  const layer2 = useTransform(scrollYProgress, [0, 1], ["0vh", "5vh"])
+  const layer3 = useTransform(scrollYProgress, [0, 1], ["0vh", "7vh"])
 
   return (
     <div>
