@@ -1,5 +1,6 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import Lenis from 'lenis'
+import { motion, useScroll, useTransform } from 'motion/react'
 import Page1 from './containers/Page1/page1.container'
 import Page2 from './containers/Page2/page2-container'
 import Page3 from './containers/Page3/page3.container'
@@ -17,13 +18,21 @@ function App() {
     requestAnimationFrame(raf)
   }, [])
 
+  const ref = useRef(null)
+  const { scrollY } = useScroll()
+
+  const backgroundY = useTransform(scrollY, [0, 3000], [0, -750])
+
   return (
-    <div>
-      <Page1 />
-      <Page2 />
-      <Page3 />
-      <Page4 />
-      <Ender />
+    <div className='app-container'>
+      <motion.div className='background' style={{y: backgroundY}}></motion.div>
+      <div className='pages'>
+        <Page1 />
+        <Page2 />
+        <Page3 />
+        <Page4 />
+        <Ender />
+      </div>
     </div>
   )
 }
