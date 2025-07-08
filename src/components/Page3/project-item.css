@@ -29,10 +29,10 @@
     justify-content: center;
     align-items: center;
     border-radius: 0px 0px 10px 10px;
-    border-right: 1px solid #2C2C2C;
-    border-bottom: 1px solid #2C2C2C;
-    border-left: 1px solid #2C2C2C;
-    background: #2C2C2C;
+    border-right: 1px solid #40444C;
+    border-bottom: 1px solid #40444C;
+    border-left: 1px solid #40444C;
+    background: #40444C;
 }
 
 .project-content {

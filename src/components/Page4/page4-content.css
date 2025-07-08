@@ -1,0 +1,19 @@
+.page4-quote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Alata', sans-serif;
+}
+
+.page4-dialogue {
+    font-size: 36px;
+    font-weight: 400;
+    color: #F7F7F7;
+}
+
+.page4-author {
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(247, 247, 247, 0.70);
+}
