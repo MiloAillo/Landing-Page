@@ -18,7 +18,6 @@ function App() {
     requestAnimationFrame(raf)
   }, [])
 
-  const ref = useRef(null)
   const { scrollY } = useScroll()
 
   const backgroundY = useTransform(scrollY, [0, 3000], [0, -750])
@@ -26,6 +25,7 @@ function App() {
   return (
     <div className='app-container'>
       <motion.div className='background' style={{y: backgroundY}}></motion.div>
+      <div className='overlay'></div>
       <div className='pages'>
         <Page1 />
         <Page2 />
