@@ -13,7 +13,7 @@ function Item({ imageExist, image, tittle, desc, tag }: ProjectInterface) {
     return (
         <div className="project-item">
             <div className="project-image" style={{
-                background: `url(/${image})`,
+                background: `${imageExist? `url(/${image})` : "white"}`,
                 backgroundSize: `cover`,
                 backgroundPosition: `center`
             }}>{imageExist !== true ? 'No Image Provided' : ""}</div>
