@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import Lenis from 'lenis'
 import { motion, useScroll, useTransform } from 'motion/react'
 import Page1 from './containers/Page1/page1.container'
