@@ -1,17 +1,15 @@
 import { motion } from "motion/react"
 import "./page3-content.css"
 import Item from "./project-item"
-import { MotionValue, useScroll, useTransform } from "motion/react"
+import { MotionValue } from "motion/react"
 
-function Page3Content() {
-  const { scrollYProgress } = useScroll({
-    offset: ["start start", "end end"]
-  })
+interface Page3ContentProps {
+  card: MotionValue<string>
+}
 
-    const card: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ["0vh", "50vh"])
-
+function Page3Content({ card }: Page3ContentProps) {
     return (
-        <motion.div className="page3-content" style={{y: card}}>
+        <motion.div className="page3-content" style={{ y: card }}>
             <div className="tittle3">
                 <p className="tittle3-dialogue">This is my</p>
                 <p className="tittle3-name">Projects</p>
