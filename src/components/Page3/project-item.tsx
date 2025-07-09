@@ -1,4 +1,3 @@
-import { li } from "motion/react-client"
 import "./project-item.css"
 
 interface ProjectInterface {
