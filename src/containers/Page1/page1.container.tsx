@@ -13,7 +13,7 @@ function Page1() {
   const { scrollYProgress: scrollYProgress2 } = useScroll({
     offset: ["start start", "end end"]
   })
-  const card: MotionValue<string> = useTransform(scrollYProgress2, [0, 1], ["0vh", "50vh"])
+  const card: MotionValue<string> = useTransform(scrollYProgress2, [0, 1], ["0vh", "50vh"]) // Temp (50vh original)
   const layer1: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ["0vh", "0vh"])
   const layer2: MotionValue<string> = useTransform(scrollYProgress, [1, 0], ["-5vh", "3vh"])
   const layer3: MotionValue<string> = useTransform(scrollYProgress, [1, 0], ["-7vh", "5vh"])

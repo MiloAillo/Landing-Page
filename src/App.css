@@ -36,3 +36,9 @@ a {
   height: 100%;
   pointer-events: none;
 }
+
+
+/* Temp */
+.temp {
+  display: none;
+}
