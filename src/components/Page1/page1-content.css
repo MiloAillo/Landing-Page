@@ -116,6 +116,7 @@
 .social-link .social-link-logo {
   width: 35px;
   height: 35px;
+  opacity: 85%;
 }
 
 .social-link .social-link-tittle a {
@@ -131,8 +132,8 @@
  background-position: center;
 }
 
-.discord {
- background: url(/discord.png);
+.email {
+ background: url(/email.png);
  background-size: cover;
  background-repeat: no-repeat;
  background-position: center;

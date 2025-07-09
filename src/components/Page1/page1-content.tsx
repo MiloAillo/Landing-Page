@@ -29,11 +29,11 @@ function Page1Content({card}: Page1ContentInterface) {
               <div className='social-links'>
                 <div className='social-link'>
                   <div className='social-link-logo instagram'></div>
-                  <p className='social-link-tittle'><a href=''>Instagram</a></p>
+                  <p className='social-link-tittle'><a href='https://www.instagram.com/miloukato'>Instagram</a></p>
                 </div>
                 <div className='social-link'>
-                  <div className='social-link-logo discord'></div>
-                  <p className='social-link-tittle'><a href=''>Discord</a></p>
+                  <div className='social-link-logo email'></div>
+                  <p className='social-link-tittle'><a href='mailto:fariskahlilhaidar@gmail.com'>fariskahlilhaidar@gmail.com</a></p>
                 </div>
               </div>
             </div>

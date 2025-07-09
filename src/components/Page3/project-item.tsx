@@ -1,22 +1,25 @@
+import { li } from "motion/react-client"
 import "./project-item.css"
 
 interface ProjectInterface {
-    imageExist: boolean
-    image?: string | null
+    image?: string
     tittle: string
     desc: string
     tag?: string[]
+    github?: string
+    live?: string
+
 }
 
-function Item({ imageExist, image, tittle, desc, tag }: ProjectInterface) {
+function Item({ image, tittle, desc, tag, github, live }: ProjectInterface) {
 
     return (
         <div className="project-item">
             <div className="project-image" style={{
-                background: `${imageExist? `url(/${image})` : "white"}`,
+                background: `${image !== undefined ? `url(/${image})` : "white"}`,
                 backgroundSize: `cover`,
                 backgroundPosition: `center`
-            }}>{imageExist !== true ? 'No Image Provided' : ""}</div>
+            }}>{image === undefined ? 'No Image Provided' : ""}</div>
             <div className="content-background">
                 <div className="project-content">
                     <div className="project-texts">
@@ -30,8 +33,8 @@ function Item({ imageExist, image, tittle, desc, tag }: ProjectInterface) {
                             })}
                         </div>
                         <div className="project-redirect">
-                            <p><a href="">{`< View on Github`}</a></p>
-                            <p><a href="">{`Live View >`}</a></p>
+                            <p><a href={github} className={`${github !== undefined ? "enabled" : "disabled"}`}>{`< View on Github`}</a></p>
+                            <p><a href={live} className={`${live !== undefined ? "enabled" : "disabled"}`}>{`Live View >`}</a></p>
                         </div>
                     </div>
                 </div>

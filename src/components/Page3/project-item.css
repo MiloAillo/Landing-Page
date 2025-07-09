@@ -102,7 +102,13 @@
 }
 
 .project-redirect a {
-    color: #F7F7F7;
     font-family: Bahnschrift, sans-serif;
 }
 
+.disabled {
+    color: #686d76;
+}
+
+.enabled {
+    color: #F7F7F7;
+}
