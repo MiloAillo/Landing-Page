@@ -19,8 +19,8 @@ function Page4() {
     })
 
     const layer1: MotionValue<string> = useTransform(scrollYProgress1, [1, 0], ["0vh", "0vh"])
-    const layer2: MotionValue<string> = useTransform(scrollYProgress1, [1, 0], ["0vh", "5vh"])
-    const layer3: MotionValue<string> = useTransform(scrollYProgress1, [1, 0], ["0vh", "10vh"])
+    const layer2: MotionValue<string> = useTransform(scrollYProgress1, [1, 0], ["0vh", "13vh"])
+    const layer3: MotionValue<string> = useTransform(scrollYProgress1, [1, 0], ["0vh", "15vh"])
     const page: MotionValue<string> = useTransform(scrollYProgress2, [1, 0], ["0vh", "-20vh"])
 
     return (
