@@ -6,8 +6,8 @@
 }
 
 .image-container {
-    width: 100px;
-    height: 100px;
+    width: clamp(80px, 3vw , 100px);
+    height: clamp(80px, 3vw ,100px);
     padding: 15px;
     display: flex;
     justify-content: center;
@@ -60,14 +60,25 @@
 }
 
 .text-name {
-    font-size: 32px;
+    font-size: clamp(24px, 3vw, 32px);;
     font-weight: 400;
     color: #F7F7F7;
 }
 
 .text-desc {
-    font-size: 20px;
+    font-size: clamp(16px, 3vw ,20px);
     font-weight: 350;
     color: #F7F7F7;
     width: 300px;
+}
+
+.text-desc-mobile {
+        display: none;
+}
+
+.item-container-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
 }

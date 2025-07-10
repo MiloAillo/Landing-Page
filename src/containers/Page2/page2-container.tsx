@@ -2,7 +2,11 @@ import "./page2-container.css"
 import Page2Content from "../../components/Page2/page2-content"
 import { useState } from "react"
 
-function Page2() {
+interface mainInterface {
+  parallax: boolean
+}
+
+function Page2({ parallax }: mainInterface) {
   const [ selectedTech, setSelectedTech] = useState<"Languages" | "Frameworks" | "Tools" | "Databases">("Languages")
 
   function LanguagesTech(): void {
@@ -27,6 +31,7 @@ function Page2() {
         toFrameworks={FrameworksTech} 
         toTools={Toolstech} 
         toDatabases={DatabasesTech} 
+        parallax={parallax}
       />
     </div>
   )    

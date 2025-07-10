@@ -40,7 +40,7 @@ function App() {
       <div className='overlay'></div>
       <div className='pages'>
         <Page1 parallax={parallax} />
-        <Page2 />
+        <Page2 parallax={parallax}/>
         <Page3 parallax={parallax}/>
         <Page4 />
         <Ender />
