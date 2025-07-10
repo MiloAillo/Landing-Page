@@ -5,7 +5,11 @@ import Page1Waves from "../../components/Page1/page1-waves"
 import Page3Content from "../../components/Page3/page3-content"
 import { useRef } from "react"
 
-function Page3() {
+interface mainInterface {
+    parallax: boolean
+}
+
+function Page3({ parallax }: mainInterface) {
     const ref1 = useRef(null)
     const ref2 = useRef(null)
     const { scrollYProgress: scrollYProgress1 } = useScroll({
