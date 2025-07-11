@@ -15,7 +15,7 @@ function Page2Content({ selectedTech, toLanguages, toFrameworks, toTools, toData
         <div className={parallax ? "content" : "content-mobile"}>
             <div className="tittle">
                 <p className="tittle-dialogue">This is my</p>
-                <p className="tittle-name">Tech Stacks</p>
+                <p className={parallax ? "tittle-name" : "tittle-name-mobile"}>Tech Stacks</p>
             </div>
             <div className={parallax ? "buttons" : "buttons-mobile"}>
                 <button className={`${parallax ? "button" : "button-mobile"} lang ${selectedTech === "Languages" ? "selected" : "" }`} onClick={toLanguages}>Languages</button>

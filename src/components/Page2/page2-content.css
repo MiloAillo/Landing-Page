@@ -31,6 +31,12 @@
     color: #F7F7F7;
 }
 
+.tittle-name-mobile {
+    font-size: clamp(32px, 6vw, 64px);;
+    font-weight: 500;
+    color: #F7F7F7;
+}
+
 .buttons {
     display: flex;
     flex-wrap: wrap;

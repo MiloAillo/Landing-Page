@@ -19,6 +19,12 @@
 
 .tittle3-name {
     font-size: clamp(32px, 6vw, 64px);
+    font-weight: 400;
+    color: #2C2C2C;
+}
+
+.tittle3-name-mobile {
+    font-size: clamp(32px, 6vw, 64px);
     font-weight: 500;
     color: #2C2C2C;
 }
@@ -35,4 +41,10 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+}
+
+.tittle3-name-mobile {
+    font-size: clamp(32px, 6vw, 64px);
+    font-weight: 500;
+    color: #2C2C2C;
 }
