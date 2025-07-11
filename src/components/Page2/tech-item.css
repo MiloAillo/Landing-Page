@@ -6,8 +6,8 @@
 }
 
 .image-container {
-    width: clamp(80px, 3vw , 100px);
-    height: clamp(80px, 3vw ,100px);
+    width: clamp(70px, 3vw , 100px);
+    height: clamp(70px, 3vw ,100px);
     padding: 15px;
     display: flex;
     justify-content: center;
@@ -60,7 +60,7 @@
 }
 
 .text-name {
-    font-size: clamp(24px, 3vw, 32px);;
+    font-size: clamp(20px, 3vw, 32px);
     font-weight: 400;
     color: #F7F7F7;
 }

@@ -6,7 +6,11 @@ import { useScroll, useTransform } from "motion/react"
 import { useRef } from "react"
 import "./page4.container.css"
 
-function Page4() {
+interface page4interface {
+    parallax: boolean
+}
+
+function Page4({ parallax }: page4interface) {
     const ref = useRef(null)
     const ref2 = useRef(null)
     const { scrollYProgress: scrollYProgress1 } = useScroll({
@@ -19,16 +23,16 @@ function Page4() {
     })
 
     const layer1: MotionValue<string> = useTransform(scrollYProgress1, [1, 0], ["0vh", "0vh"])
-    const layer2: MotionValue<string> = useTransform(scrollYProgress1, [1, 0], ["0vh", "13vh"])
-    const layer3: MotionValue<string> = useTransform(scrollYProgress1, [1, 0], ["0vh", "15vh"])
-    const page: MotionValue<string> = useTransform(scrollYProgress2, [1, 0], ["0vh", "-20vh"])
+    const layer2: MotionValue<string> = useTransform(scrollYProgress1, [1, 0], ["0vh", parallax ? "13vh" : "0vh"])
+    const layer3: MotionValue<string> = useTransform(scrollYProgress1, [1, 0], ["0vh", parallax ? "15vh" : "0vh"])
+    const page: MotionValue<string> = useTransform(scrollYProgress2, [1, 0], ["0vh", parallax ? "-20vh" : "0vh"])
 
     return (
         <motion.div className="page4" ref={ref2} style={{y: page}}>
             <div className="page4-wave" ref={ref}>
                 <Page1Waves layer1={layer1} layer2={layer2} layer3={layer3} />
             </div>
-            <div className="page4-content">
+            <div className={parallax ? "page4-content" : "page4-content-mobile"}>
                 <Page4Content />
             </div>
         </motion.div>

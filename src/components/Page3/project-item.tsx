@@ -7,20 +7,20 @@ interface ProjectInterface {
     tag?: string[]
     github?: string
     live?: string
-
+    parallax: boolean
 }
 
-function Item({ image, tittle, desc, tag, github, live }: ProjectInterface) {
+function Item({ image, tittle, desc, tag, github, live, parallax }: ProjectInterface) {
 
     return (
-        <div className="project-item">
-            <div className="project-image" style={{
+        <div className={parallax ? "project-item" : "project-item-mobile"}>
+            <div className={parallax ? "project-image" : "disable"} style={{
                 background: `${image !== undefined ? `url(/${image})` : "white"}`,
                 backgroundSize: `cover`,
-                backgroundPosition: `center`
+                backgroundPosition: `center`,
             }}>{image === undefined ? 'No Image Provided' : ""}</div>
-            <div className="content-background">
-                <div className="project-content">
+            <div className={parallax ? "content-background" : "content-background-mobile"}>
+                <div className={parallax ? "project-content" : "project-content-mobile"}>
                     <div className="project-texts">
                         <div className="project-tittle">{tittle}</div>
                         <div className="project-desc">{desc}</div>

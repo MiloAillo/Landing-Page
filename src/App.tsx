@@ -42,7 +42,7 @@ function App() {
         <Page1 parallax={parallax} />
         <Page2 parallax={parallax}/>
         <Page3 parallax={parallax}/>
-        <Page4 />
+        <Page4 parallax={parallax}/>
         <Ender />
       </div>
     </div>

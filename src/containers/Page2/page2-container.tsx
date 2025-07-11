@@ -23,8 +23,8 @@ function Page2({ parallax }: mainInterface) {
   }
 
   return (
-    <div className='page2'>
-      <div className="content"></div>
+    <div className="page2">
+      <div className={parallax ? "content" : "content-mobile"}></div>
       <Page2Content
         selectedTech={selectedTech} 
         toLanguages={LanguagesTech} 

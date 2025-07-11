@@ -12,14 +12,14 @@
 }
 
 .tittle3-dialogue {
-    font-size: 24px;
+    font-size: clamp(18px, 3vw, 24px);
     font-weight: 300;
     color: rgba(0, 0, 0, 0.71);
 }
 
 .tittle3-name {
-    font-size: 64px;
-    font-weight: 400;
+    font-size: clamp(32px, 6vw, 64px);
+    font-weight: 500;
     color: #2C2C2C;
 }
 
@@ -27,5 +27,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
+    justify-content: center;
+}
+
+.project-items-mobile {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
 }

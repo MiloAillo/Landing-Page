@@ -21,17 +21,17 @@ function Page3({ parallax }: mainInterface) {
         offset: ["start start", "start end"]
     })
     const layer1: MotionValue<string> = useTransform(scrollYProgress1, [0, 1], ["0vh", "0vh"])
-    const layer2: MotionValue<string> = useTransform(scrollYProgress1, [0, 1], ["0vh", "7vh"])
-    const layer3: MotionValue<string> = useTransform(scrollYProgress1, [0, 1], ["0vh", "10vh"])
-    const card: MotionValue<string> = useTransform(scrollYProgress2, [0, 1], ["0vh", "-20vh"])
+    const layer2: MotionValue<string> = useTransform(scrollYProgress1, [0, 1], ["0vh", parallax ? "7vh" : "0vh"])
+    const layer3: MotionValue<string> = useTransform(scrollYProgress1, [0, 1], ["0vh", parallax ? "10vh" : "0vh"])
+    const card: MotionValue<string> = useTransform(scrollYProgress2, [0, 1], ["0vh", parallax ? "-20vh" : "0vh"])
 
     return (
         <div className="page3">
             <div ref={ref1} className="page3-wave">
                 <Page1Waves layer1={layer1} layer2={layer2} layer3={layer3} />
             </div>
-            <div className="page3-content" ref={ref2}>
-            <Page3Content card={card}/>
+            <div className={parallax ? "" : "page3-content-mobile"} ref={ref2}>
+            <Page3Content parallax={parallax} card={card}/>
             </div>
         </div>
     )

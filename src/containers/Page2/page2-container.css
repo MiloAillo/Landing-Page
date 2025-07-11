@@ -8,3 +8,7 @@
 .content {
   padding: 0 0 50px 0;
 }
+
+.content-mobile {
+  margin-top: -10px;
+}

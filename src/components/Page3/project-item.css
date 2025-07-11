@@ -52,13 +52,13 @@
 }
 
 .project-tittle {
-    font-size: 32px;
+    font-size: clamp(24px, 3vw ,32px);
     font-weight: 400;
     color: #F7F7F7;
 }
 
 .project-desc {
-    font-size: 20px;
+    font-size: clamp(18px, 3vw ,20px);
     font-weight: 300;
     color: rgba(247, 247, 247, 0.74);
 }
@@ -111,4 +111,36 @@
 
 .enabled {
     color: #F7F7F7;
+}
+
+.disable {
+    display: none;
+}
+
+.project-content-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+}
+
+.content-background-mobile {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background: #40444C;
+}
+
+.project-item-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+    width: 100%;
 }
