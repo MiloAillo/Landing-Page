@@ -5,6 +5,13 @@
     gap: 50px;
 }
 
+.content-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
 .tittle {
     display: flex;
     flex-direction: column;
@@ -13,14 +20,20 @@
 }
 
 .tittle-dialogue {
-    font-size: 24px;
+    font-size: clamp(18px, 3vw, 24px);
     font-weight: 300;
     color: rgba(238, 238, 238, 0.71);
 }
 
 .tittle-name {
-    font-size: 64px;
+    font-size: clamp(32px, 6vw, 64px);;
     font-weight: 400;
+    color: #F7F7F7;
+}
+
+.tittle-name-mobile {
+    font-size: clamp(32px, 6vw, 64px);;
+    font-weight: 500;
     color: #F7F7F7;
 }
 
@@ -32,13 +45,37 @@
     gap: 20px;
 }
 
-button {
+.buttons-mobile {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.button {
     width: auto;
     height: 37px;
     padding: 3px 30px;
     border-radius: 15px;
     font-family: 'Alata', sans-serif;
-    font-size: 20px;
+    font-size: clamp(14px, 3vw, 20px);
+    font-weight: 400;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    border: none;
+    color: #2C2C2C;
+    background-color: #F7F7F7;
+}
+
+.button-mobile {
+    width: auto;
+    height: 37px;
+    padding: 2px 15px;
+    border-radius: 15px;
+    font-family: 'Alata', sans-serif;
+    font-size: clamp(16px, 3vw, 20px);
     font-weight: 400;
     line-height: 37px;
     display: flex;

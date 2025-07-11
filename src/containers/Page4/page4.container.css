@@ -16,3 +16,16 @@
     padding-bottom: 15px;
     padding-top: 5px;
 }
+
+.page4-content-mobile {
+    background-color: #2C2C2C;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 30;
+    margin-top: -30px;
+    padding-bottom: 15px;
+    padding-top: 5px;
+}

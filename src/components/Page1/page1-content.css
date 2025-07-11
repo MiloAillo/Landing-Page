@@ -4,7 +4,8 @@
   flex-direction: row;
   gap: 50px;
   align-items: center;
-  flex-wrap: wrap;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .content1 {
@@ -57,7 +58,7 @@
 }
 
 .content2 {
-  width: 480px;
+  max-width: 480px;
   font-family: bahnschrift, sans-serif;
   display: flex;
   flex-direction: column;
@@ -71,19 +72,22 @@
 }
 
 .intro .intro-desc {
-  font-size: 32px;
+  /* font-size: 32px; */
+  font-size: clamp(24px, 3vw ,32px);
   font-weight: 350;
   color: #000;
 }
 
 .name .name-dialogue {
-  font-size: 24px;
+  /* font-size: 24px; */
+  font-size: clamp(18px, 3vw ,24px);
   font-weight: 300;
   color: rgba(0, 0, 0, 0.71);
 }
 
 .name .name-name {
-  font-size: 64px;
+  /* font-size: 64px; */
+  font-size: clamp(32px, 6vw ,64px);
   font-weight: 600;
   color: #000;
 }
@@ -95,7 +99,8 @@
 }
 
 .social-tittle {
-  font-size: 24px;
+  /* font-size: 24px; */
+  font-size: clamp(18px, 3vw ,24px);
   font-weight: 350;
   color: rgba(44, 44, 44, 0.85);
 }
@@ -114,27 +119,44 @@
 }
 
 .social-link .social-link-logo {
-  width: 35px;
-  height: 35px;
+  /* width: 35px; */
+  width: clamp(26px, 3vw, 35px);
+  /* height: 35px; */
+  height: clamp(26px, 3vw, 35px);
   opacity: 85%;
 }
 
 .social-link .social-link-tittle a {
-  font-size: 20px;
+  /* font-size: 20px; */
+  font-size: clamp(16px, 3vw ,20px);
   font-weight: 350;
   color: rgba(44, 44, 44, 0.85);
 }
 
 .instagram {
  background: url(/instagram.png);
- background-size: cover;
+ background-size: contain;
  background-repeat: no-repeat;
  background-position: center;
 }
 
 .email {
  background: url(/email.png);
- background-size: cover;
+ background-size: contain;
  background-repeat: no-repeat;
  background-position: center;
+}
+
+@media (max-width: 800px) {
+  .content1 {
+    display: none;
+  }
+}
+
+@media (max-width: 625px) {
+
+}
+
+@media (max-width: 400px) {
+  
 }

@@ -5,11 +5,12 @@ interface ItemInterface {
     image: string
     name: string
     desc: string
+    parallax: boolean
 }
 
-function Item({lowercaseName, image, name, desc}: ItemInterface) {
+function Item({lowercaseName, image, name, desc, parallax}: ItemInterface) {
     return (
-        <div className={`item-container ${lowercaseName}`}>
+        <div className={`${parallax ? "item-container" : "item-container-mobile"} ${lowercaseName} `}>
             <div className="image-container">
                 <div className="image" 
                 style={{
@@ -24,7 +25,7 @@ function Item({lowercaseName, image, name, desc}: ItemInterface) {
             </div>
             <div className="text">
                 <p className="text-name">{name}</p>
-                <p className="text-desc">{desc}</p>
+                <p className={parallax ? "text-desc" : "text-desc-mobile"}>{desc}</p>
             </div>
         </div>
     )

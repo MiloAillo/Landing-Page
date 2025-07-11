@@ -4,16 +4,21 @@
     align-items: center;
     justify-content: center;
     font-family: 'Alata', sans-serif;
+    gap: 5px;
 }
 
 .page4-dialogue {
-    font-size: 36px;
+    font-size: clamp(24px, 3vw ,36px);
+    text-align: center;
     font-weight: 400;
     color: #F7F7F7;
+    padding: 0 25px;
 }
 
 .page4-author {
-    font-size: 24px;
+    font-size: clamp(18px, 3vw ,24px);
     font-weight: 400;
     color: rgba(247, 247, 247, 0.70);
+    align-self: flex-end;
+    padding-right: 25px;
 }
