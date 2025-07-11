@@ -1,11 +1,17 @@
 ## Landing-Page-Project [Work In Progress]
-I am trying to make my own perosnal landing page. This is my biggest frontend project as of this moment. <br> <br>
+My own perosnal landing page. <br> <br>
 
-My plan includes: <br>
-- Minimalist Design <br>
-- Parallax Effect <br>
-- 3D Card Effect
- <br>
+This project is built on top of React + Typescript along with, <br>
+- Lenis, for smooth scrolling
+- Motion (prev Framer Motion), for parallax effect
+
+<br>
+
+Future Plan include, <br>
+- Implementing enter animation for each elements
+- Refactor to TailwindCSS
+- Backend integration for dynamic data
+
 Here is my design: <br>
 [Figma](https://www.figma.com/design/38K4TDCg8NiQI1049MXklZ/Halaman-Mendarat?node-id=0-1&t=J3D69icylGNQiiV8-1)
 
