@@ -1,4 +1,4 @@
-## Landing-Page-Project [Work In Progress]
+## Landing-Page-Project
 My own perosnal landing page. <br> <br>
 
 This project is built on top of React + Typescript along with, <br>
