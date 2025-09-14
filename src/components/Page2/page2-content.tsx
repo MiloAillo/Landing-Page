@@ -27,11 +27,14 @@ function Page2Content({ selectedTech, toLanguages, toFrameworks, toTools, toData
                 <div className={`items-container items-languages ${selectedTech !== "Languages" ? "remove" : ""}`}>
                      <Item lowercaseName={"javascript"} name={"Javascript"} image={"javascript.png"} desc={"The language i used since the beginning of my journey"} parallax={parallax}/>
                     <Item lowercaseName={"typescript"} name={"Typescript"} image={"typescript.png"} desc={"Supercharged Javascript i use to avoid production bugs nightmare"} parallax={parallax}/>
+                    <Item lowercaseName={"php"} name={"PHP"} image={"php.png"} desc={"A language i had to learn to use Laravel"} parallax={parallax}/>
                 </div>
                 <div className={`items-container items-frameworks ${selectedTech !== "Frameworks" ? "remove" : ""}`}>
-                    <Item lowercaseName={"react"} name={"React"} image={"react.png"} desc={"My number one frontend framework"} parallax={parallax}/>
-                    <Item lowercaseName={"nestjs"} name={"NestJS"} image={"nestjs.png"} desc={"A robust and scalable backend framework i mainly use"} parallax={parallax}/>
+                    <Item lowercaseName={"react"} name={"React"} image={"react.png"} desc={"My number one frontend library"} parallax={parallax}/>
+                    <Item lowercaseName={"nestjs"} name={"NestJS"} image={"nestjs.png"} desc={"A robust and scalable backend framework i have used"} parallax={parallax}/>
                     <Item lowercaseName={"expressjs"} name={"ExpressJS"} image={"express.png"} desc={"A lightweight and fast backend framework i sometimes use"} parallax={parallax}/>
+                    <Item lowercaseName={"laravel"} name={"Laravel"} image={"Laravel.png"} desc={"Goated all in one backend"} parallax={parallax}/>
+                    <Item lowercaseName={"tailwind"} name={"Tailwind"} image={"Tailwind.png"} desc={"No separate CSS files anymore yay"} parallax={parallax}/>
                 </div>
                 <div className={`items-container items-tools ${selectedTech !== "Tools" ? "remove" : ""}`}>
                     <Item lowercaseName={"vercel"} name={"Vercel"} image={"vercel.png"} desc={"My way to go for deploying serverless projects"} parallax={parallax}/>
