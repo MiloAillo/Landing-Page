@@ -13,6 +13,10 @@ function Page1Waves({layer1, layer2, layer3}: Page1Waves) {
         <motion.div className='wave' id='wave1' style={{y: layer1}}></motion.div>
         <motion.div className='wave' id='wave2' style={{y: layer2}}></motion.div>
         <motion.div className='wave' id='wave3'style={{y: layer3}}></motion.div>
+
+        {/* <motion.div className='wave' id='wave1'></motion.div>
+        <motion.div className='wave' id='wave2'></motion.div>
+        <motion.div className='wave' id='wave3'></motion.div> */}
         </div>
     )
 }

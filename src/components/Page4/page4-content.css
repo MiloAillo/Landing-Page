@@ -5,6 +5,7 @@
     justify-content: center;
     font-family: 'Alata', sans-serif;
     gap: 5px;
+    /* z-index:; */
 }
 
 .page4-dialogue {

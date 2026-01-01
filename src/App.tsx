@@ -43,7 +43,10 @@ function App() {
         <Page2 parallax={parallax}/>
         <Page3 parallax={parallax}/>
         <Page4 parallax={parallax}/>
-        <Ender />
+        {/* <Ender /> */}
+        <div className='page-plus'>
+          aaaaaa
+        </div>
       </div>
     </div>
   )

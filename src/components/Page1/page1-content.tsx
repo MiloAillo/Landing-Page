@@ -1,13 +1,15 @@
 import { motion, MotionValue } from 'motion/react'
 import "./page1-content.css"
+import type { Ref } from 'react'
 
 interface Page1ContentInterface {
     card: MotionValue<string>
+    ref: Ref<HTMLDivElement> | undefined
 }
 
-function Page1Content({card}: Page1ContentInterface) {
+function Page1Content({card, ref}: Page1ContentInterface) {
     return (
-        <motion.div className='main-content' style={{y: card}}>
+        <motion.div className='main-content' ref={ref} style={{y: card}}>
           <div className='content1 card'>
             <div className='pfp'></div>
             <div className='card-content'>
