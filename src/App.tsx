@@ -45,7 +45,8 @@ function App() {
         <Page4 parallax={parallax}/>
         {/* <Ender /> */}
         <div className='page-plus'>
-          aaaaaa
+            <p>&copy; 2025-2026 Faris Kahlil Haidar. All Rights Reserved.</p>
+            <div className='filler'> </div>
         </div>
       </div>
     </div>
