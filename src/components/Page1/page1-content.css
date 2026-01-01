@@ -39,6 +39,8 @@
   flex-direction: column;
   width: 100%;
   align-items: center;
+  margin-top: -5px;
+  gap: 5px;
 }
 
 .card-content .card-number {
@@ -62,7 +64,7 @@
   font-family: bahnschrift, sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 40px;
 }
 
 .intro {
@@ -145,6 +147,10 @@
  background-size: contain;
  background-repeat: no-repeat;
  background-position: center;
+}
+
+.linkedin {
+  /* margin-left: -2.5px; */
 }
 
 @media (max-width: 800px) {
