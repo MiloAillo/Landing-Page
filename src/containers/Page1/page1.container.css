@@ -24,7 +24,7 @@
   width: 100vw;
   max-height: 750px;
   min-height: 750px;
-
+  pointer-events: none;
 }
 
 .page1-mobile {
