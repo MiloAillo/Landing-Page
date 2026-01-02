@@ -1,0 +1,4 @@
+/* import tailwind only for functionality without preflight (destroy the old css) */
+@import "tailwindcss/theme";
+@import "tailwindcss/utilities";
+/* temp: refactor to tailwind needed! */
