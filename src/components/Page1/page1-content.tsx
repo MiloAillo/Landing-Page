@@ -12,7 +12,7 @@ interface Page1ContentInterface {
 function Page1Content({card, ref}: Page1ContentInterface) {
     return (
         <motion.div className='main-content' ref={ref} style={{y: card}}>
-          <div className='content1 card'>
+          <div className='content1'>
             <div className='pfp'></div>
             <div className='card-content'>
               <p className='card-name'>Mischiko Moe</p>

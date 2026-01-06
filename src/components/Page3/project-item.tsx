@@ -1,3 +1,4 @@
+import { motion, spring } from "motion/react"
 import "./project-item.css"
 
 interface ProjectInterface {
@@ -14,12 +15,24 @@ function Item({ image, tittle, desc, tag, github, live, parallax }: ProjectInter
 
     return (
         <div className={parallax ? "project-item" : "project-item-mobile"}>
-            <div className={parallax ? "project-image" : "disable"} style={{
+            {/* <div className={parallax ? "project-image" : "disable"} style={{
                 background: `${image !== undefined ? `url(/${image})` : "white"}`,
                 backgroundSize: `cover`,
                 backgroundPosition: `center`,
-            }}>{image === undefined ? 'No Image Provided' : ""}</div>
-            <div className={parallax ? "content-background" : "content-background-mobile"}>
+            }}>{image === undefined ? 'No Image Provided' : ""}</div> */}
+            <motion.div 
+                whileHover={{
+                    scale: 1.03,
+                    boxShadow: "0 1px 10px -1px"
+                }}
+                transition={{
+                    type: spring,
+                    stiffness: 300,
+                    damping: 15,
+                    mass: 1
+                }} 
+                className={parallax ? "content-background" : "content-background-mobile"}
+            >
                 <div className={parallax ? "project-content" : "project-content-mobile"}>
                     <div className="project-texts">
                         <div className="project-tittle">{tittle}</div>
@@ -37,7 +50,7 @@ function Item({ image, tittle, desc, tag, github, live, parallax }: ProjectInter
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     )
 }
