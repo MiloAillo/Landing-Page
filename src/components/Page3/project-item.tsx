@@ -1,6 +1,9 @@
 import { motion, spring } from "motion/react"
 import "./project-item.css"
 import type { projectDataTypes, projectTagDataTypes } from "@/types/getAllDataTypes"
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTrigger } from "../ui/dialog"
+import { Button } from "../ui/button"
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card"
 
 interface ProjectInterface {
     image?: string
@@ -42,11 +45,42 @@ function Item({ image, tittle, desc, tag, github, live, parallax }: ProjectInter
                     <div className="project-details">
                         <div className="project-tag">
                             {tag?.map((item, index) => {
-                                if (index < 2) return <div className="tag">{item.name}</div>
+                                if (index < 2) return   <HoverCard>
+                                                            <HoverCardTrigger><div className="tag">{item.name}</div></HoverCardTrigger>
+                                                            <HoverCardContent className="w-fit max-w-100 flex flex-col gap-1 bg-white/50 backdrop-blur-sm">
+                                                                <p className="font-[Assistant] font-bold text-[18px]">{item.name}</p>
+                                                                <p className="font-[Assistant] ">{item.description}</p>
+                                                            </HoverCardContent>
+                                                        </HoverCard>
                                 if (index === 2) return <div className="tag-plus">+{tag.length - index}</div>
                             })}
                         </div>
-                        <button className="font-[Alata] h-10 w-full bg-white/4 border-2 shadow-none rounded-md text-[#F7F7F7] text-[16px]">Show detail</button>
+                        <Dialog>
+                            <DialogTrigger className="font-[Alata] h-10 w-full bg-white/4 border-2 shadow-none rounded-md text-[#F7F7F7] text-[16px]">Show Detail</DialogTrigger>
+                            <DialogContent className="bg-white/10 backdrop-blur-[7px] border-0">
+                                <DialogHeader className="font-[Alata] font-bold text-2xl text-[#F7F7F7] tracking-wide">{tittle}</DialogHeader>
+                                <DialogDescription className="font-[Alata] text-base text-[#F7F7F7]/85 flex flex-col gap-15">
+                                    <p>{desc}</p>
+                                    <div className="flex gap-2">
+                                        {tag?.map((item) => (
+                                            <HoverCard>
+                                                <HoverCardTrigger><div className="font-[Assistant] font-semilight bg-white/50 text-sm border border-white/0 px-2 py-1 rounded-2xl backdrop-blur-2xl text-black/80">{item.name}</div></HoverCardTrigger>
+                                                <HoverCardContent className="w-fit max-w-100 flex flex-col gap-1 bg-white/35 backdrop-blur-sm backdrop-invert-100">
+                                                    <p className="font-[Assistant] font-bold text-[18px]">{item.name}</p>
+                                                    <p className="font-[Assistant] ">{item.description}</p>
+                                                </HoverCardContent>
+                                            </HoverCard>
+                                        ))}
+                                    </div>
+                                </DialogDescription>
+                                <DialogFooter>
+                                    <div className="flex w-full gap-2">
+                                        <a className="flex-1 w-full" href={github}><Button className="bg-black/50 shadow-none border-0 flex-1 w-full">Source</Button></a>
+                                        <a className="flex-1 w-full" href={live}><Button className="bg-black/50 flex-1 w-full shadow-none border-0" disabled={live ? false : true}>Live view</Button></a>
+                                    </div>
+                                </DialogFooter>
+                            </DialogContent>
+                        </Dialog>
                         {/* <div className="project-redirect">
                             <p><a href={github} className={`${github !== undefined ? "enabled" : "disabled"}`}>{`< View on Github`}</a></p>
                             <p><a href={live} className={`${live !== undefined ? "enabled" : "disabled"}`}>{`Live View >`}</a></p>

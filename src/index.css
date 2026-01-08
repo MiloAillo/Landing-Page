@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/assistant');
+
 /* import tailwind only for functionality without preflight (destroy the old css) */
 @import "tailwindcss/theme";
 @import "tailwindcss/utilities";

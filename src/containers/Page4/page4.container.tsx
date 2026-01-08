@@ -28,7 +28,7 @@ function Page4({ parallax }: page4interface) {
     const page: MotionValue<string> = useTransform(scrollYProgress2, [1, 0], ["0vh", parallax ? "-20vh" : "0vh"])
 
     return (
-        <motion.div className="page4" ref={ref2} style={{y: page}}>
+        <motion.div className="page4 pointer-events-none" ref={ref2} style={{y: page}}>
             <div className="page4-wave" ref={ref}>
                 <Page1Waves layer1={layer1} layer2={layer2} layer3={layer3} />
             </div>
