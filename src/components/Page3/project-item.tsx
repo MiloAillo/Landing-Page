@@ -45,13 +45,18 @@ function Item({ image, tittle, desc, tag, github, live, parallax }: ProjectInter
                     <div className="project-details">
                         <div className="project-tag">
                             {tag?.map((item, index) => {
-                                if (index < 2) return   <HoverCard>
-                                                            <HoverCardTrigger><div className="tag">{item.name}</div></HoverCardTrigger>
-                                                            <HoverCardContent className="w-fit max-w-100 flex flex-col gap-1 bg-white/50 backdrop-blur-sm">
-                                                                <p className="font-[Assistant] font-bold text-[18px]">{item.name}</p>
-                                                                <p className="font-[Assistant] ">{item.description}</p>
-                                                            </HoverCardContent>
-                                                        </HoverCard>
+                                if (index < 2) return   <motion.div
+                                                            whileHover={{
+                                                                scale: 1.15,                                                            }}
+                                                        >
+                                                            <HoverCard>
+                                                                <HoverCardTrigger className="tag">{item.name}</HoverCardTrigger>
+                                                                <HoverCardContent className="w-fit max-w-100 flex flex-col gap-1 bg-white/50 backdrop-blur-sm">
+                                                                    <p className="font-[Assistant] font-bold text-[18px]">{item.name}</p>
+                                                                    <p className="font-[Assistant] ">{item.description}</p>
+                                                                </HoverCardContent>
+                                                            </HoverCard>
+                                                        </motion.div>
                                 if (index === 2) return <div className="tag-plus">+{tag.length - index}</div>
                             })}
                         </div>
@@ -63,20 +68,27 @@ function Item({ image, tittle, desc, tag, github, live, parallax }: ProjectInter
                                     <p>{desc}</p>
                                     <div className="flex gap-2">
                                         {tag?.map((item) => (
-                                            <HoverCard>
-                                                <HoverCardTrigger><div className="font-[Assistant] font-semilight bg-white/50 text-sm border border-white/0 px-2 py-1 rounded-2xl backdrop-blur-2xl text-black/80">{item.name}</div></HoverCardTrigger>
-                                                <HoverCardContent className="w-fit max-w-100 flex flex-col gap-1 bg-white/35 backdrop-blur-sm backdrop-invert-100">
-                                                    <p className="font-[Assistant] font-bold text-[18px]">{item.name}</p>
-                                                    <p className="font-[Assistant] ">{item.description}</p>
-                                                </HoverCardContent>
-                                            </HoverCard>
+                                            <motion.div
+                                                whileHover={{
+                                                    scale: 1.1,
+                                                    scaleX: 1.05
+                                                }}
+                                            >
+                                                <HoverCard>
+                                                    <HoverCardTrigger><div className="font-[Assistant] font-semilight bg-white/80 text-sm border border-white/0 px-2 py-1 rounded-2xl backdrop-blur-2xl text-black/80 text-center">{item.name}</div></HoverCardTrigger>
+                                                    <HoverCardContent className="w-fit max-w-100 flex flex-col gap-1 bg-white/35 backdrop-blur-sm backdrop-invert-100">
+                                                        <p className="font-[Assistant] font-bold text-[18px]">{item.name}</p>
+                                                        <p className="font-[Assistant] ">{item.description}</p>
+                                                    </HoverCardContent>
+                                                </HoverCard>
+                                            </motion.div>
                                         ))}
                                     </div>
                                 </DialogDescription>
                                 <DialogFooter>
                                     <div className="flex w-full gap-2">
-                                        <a className="flex-1 w-full" href={github}><Button className="bg-black/50 shadow-none border-0 flex-1 w-full">Source</Button></a>
-                                        <a className="flex-1 w-full" href={live}><Button className="bg-black/50 flex-1 w-full shadow-none border-0" disabled={live ? false : true}>Live view</Button></a>
+                                        <a className="flex-1 w-full" href={github}><Button className="bg-white/80 shadow-none border-0 flex-1 text-black/80 hover:bg-white w-full font-[Alata]">Source</Button></a>
+                                        <a className="flex-1 w-full" href={live}><Button className="bg-white/80 flex-1 w-full shadow-none border-0 text-black/80 hover:bg-white font-[Alata]" disabled={live ? false : true}>Live view</Button></a>
                                     </div>
                                 </DialogFooter>
                             </DialogContent>

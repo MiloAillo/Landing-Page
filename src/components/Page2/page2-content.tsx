@@ -1,6 +1,8 @@
 import type { techstackDataTypes } from "@/types/getAllDataTypes"
+import type { MouseEvent } from "react"
 import "./page2-content.css"
 import Item from "./tech-item"
+import { motion } from "motion/react"
 
 interface Page2ContentInterface {
     selectedTech: string | null
@@ -11,16 +13,28 @@ interface Page2ContentInterface {
 }
 
 function Page2Content({ selectedTech, setTech, techData, techstacksData, parallax }: Page2ContentInterface) {
+    const scrollFocus = (e: MouseEvent<HTMLButtonElement>) => {
+        e.currentTarget.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center"
+        })
+    }
+
     return (
-        <div className={parallax ? "content" : "content-mobile"}>
+        <motion.div className={parallax ? "content" : "content-mobile"}>
             <div className="tittle">
                 <p className="tittle-dialogue">This is my</p>
                 <p className={parallax ? "tittle-name" : "tittle-name-mobile"}>Tech Stacks</p>
             </div>
-            <div className={parallax ? "buttons" : "buttons-mobile"}>
+            <div 
+                className={parallax ? "buttons" : "flex flex-nowrap flex-row justify-start items-start w-full gap-3.5 overflow-scroll"}
+            >
+                {!parallax && <div className="flex-shrink-0 w-6" />}
                 {techData.map(tech => (
-                    <button onClick={() => setTech(tech)} className={`${parallax ? "button" : "button-mobile"} lang ${selectedTech === tech ? "selected" : "" }`}>{tech}</button>
+                    <button onClick={(e) => {setTech(tech); scrollFocus(e)}} className={`${parallax ? "button" : "button-mobile"} ${selectedTech === tech ? "selected" : "" }`}>{tech}</button>
                 ))}
+                {!parallax && <div className="flex-shrink-0 w-6" />}
             </div>
             <div className="items">
                 {techstacksData.map(techstack => (
@@ -30,28 +44,8 @@ function Page2Content({ selectedTech, setTech, techData, techstacksData, paralla
                         ))}
                     </div>
                 ))}
-                {/* <div className={`items-container items-languages ${selectedTech !== "Languages" ? "remove" : ""}`}>
-                     <Item lowercaseName={"javascript"} name={"Javascript"} image={"javascript.png"} desc={"The language i used since the beginning of my journey"} parallax={parallax}/>
-                    <Item lowercaseName={"typescript"} name={"Typescript"} image={"typescript.png"} desc={"Supercharged Javascript i use to avoid production bugs nightmare"} parallax={parallax}/>
-                    <Item lowercaseName={"php"} name={"PHP"} image={"php.png"} desc={"A language i had to learn to use Laravel"} parallax={parallax}/>
-                </div>
-                <div className={`items-container items-frameworks ${selectedTech !== "Frameworks" ? "remove" : ""}`}>
-                    <Item lowercaseName={"react"} name={"React"} image={"react.png"} desc={"My number one frontend library"} parallax={parallax}/>
-                    <Item lowercaseName={"nestjs"} name={"NestJS"} image={"nestjs.png"} desc={"A robust and scalable backend framework i have used"} parallax={parallax}/>
-                    <Item lowercaseName={"expressjs"} name={"ExpressJS"} image={"express.png"} desc={"A lightweight and fast backend framework i sometimes use"} parallax={parallax}/>
-                    <Item lowercaseName={"laravel"} name={"Laravel"} image={"Laravel.png"} desc={"Goated all in one backend"} parallax={parallax}/>
-                    <Item lowercaseName={"tailwind"} name={"Tailwind"} image={"Tailwind.png"} desc={"No separate CSS files anymore yay"} parallax={parallax}/>
-                </div>
-                <div className={`items-container items-tools ${selectedTech !== "Tools" ? "remove" : ""}`}>
-                    <Item lowercaseName={"vercel"} name={"Vercel"} image={"vercel.png"} desc={"My way to go for deploying serverless projects"} parallax={parallax}/>
-                    <Item lowercaseName={"figma"} name={"Figma"} image={"figma.png"} desc={"A place for me to brainstorm a sleek UI design"} parallax={parallax}/>
-                    <Item lowercaseName={"postman"} name={"Postman"} image={"postman.png"} desc={"tool to help me test APIs"} parallax={parallax}/>
-                </div>
-                <div className={`items-container items-databases ${selectedTech !== "Databases" ? "remove" : ""}`}>
-                    <Item lowercaseName={"mysql"} name={"MySQL"} image={"mysql.png"} desc={"Relational database management system i always use"} parallax={parallax}/>
-                </div> */}
             </div>
-        </div>
+        </motion.div>
     )
 }
 
