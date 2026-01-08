@@ -62,11 +62,11 @@ function Item({ image, tittle, desc, tag, github, live, parallax }: ProjectInter
                         </div>
                         <Dialog>
                             <DialogTrigger className="font-[Alata] h-10 w-full bg-white/4 border-2 shadow-none rounded-md text-[#F7F7F7] text-[16px]">Show Detail</DialogTrigger>
-                            <DialogContent className="bg-white/10 backdrop-blur-[7px] border-0">
+                            <DialogContent className="bg-white/10 backdrop-blur-[7px] border-0 w-[80%]">
                                 <DialogHeader className="font-[Alata] font-bold text-2xl text-[#F7F7F7] tracking-wide">{tittle}</DialogHeader>
                                 <DialogDescription className="font-[Alata] text-base text-[#F7F7F7]/85 flex flex-col gap-15">
                                     <p>{desc}</p>
-                                    <div className="flex gap-2">
+                                    <div className="flex gap-2 flex-wrap">
                                         {tag?.map((item) => (
                                             <motion.div
                                                 whileHover={{

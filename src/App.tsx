@@ -82,7 +82,7 @@ function App() {
         <Page3 parallax={parallax} data={data ? data : {projects: [], techStacks: []}}/>
         <Page4 parallax={parallax}/>
         {/* <Ender /> */}
-        <div className='page-plus'>
+        <div className='relative flex justify-center items-center md:items-start w-full h-10 md:h-25 bg-[#2C2C2C] z-1 text-center md:leading-41 overflow-y-hidden md:-mt-25 text-[rgba(255,255,255,0.781)]'>
             <p>&copy; 2025-2026 Faris Kahlil Haidar. All Rights Reserved.</p>
             <div className='filler'> </div>
         </div>
