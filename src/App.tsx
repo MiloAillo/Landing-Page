@@ -26,7 +26,7 @@ function App() {
 
   const fetchData = async () => {
     const data: getAllDataTypes | null = await getAllData()
-    console.log(data)
+    // console.log(data)
     setTimeout(() => {
       if (data == null) {
         setIsNull(true)
@@ -78,8 +78,8 @@ function App() {
     >
       <div className='pages'>
         <Page1 parallax={parallax} />
-        <Page2 parallax={parallax}/>
-        <Page3 parallax={parallax}/>
+        <Page2 parallax={parallax} data={data ? data : {projects: [], techStacks: []}}/>
+        <Page3 parallax={parallax} data={data ? data : {projects: [], techStacks: []}}/>
         <Page4 parallax={parallax}/>
         {/* <Ender /> */}
         <div className='page-plus'>

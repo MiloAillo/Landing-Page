@@ -93,6 +93,20 @@
     border-radius: 15px;
 }
 
+.project-tag .tag-plus {
+    font-size: 13px;
+    color: #2C2C2C;
+    font-family: 'Assistant', sans-serif;
+    background-color: rgba(255, 255, 255, 0.041);
+    border: 1px solid #F7F7F7;
+    color: #F7F7F7;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
 .project-redirect {
     display: flex;
     flex-direction: row;

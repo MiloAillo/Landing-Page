@@ -1,11 +1,12 @@
 import { motion, spring } from "motion/react"
 import "./project-item.css"
+import type { projectDataTypes, projectTagDataTypes } from "@/types/getAllDataTypes"
 
 interface ProjectInterface {
     image?: string
     tittle: string
     desc: string
-    tag?: string[]
+    tag?: projectTagDataTypes
     github?: string
     live?: string
     parallax: boolean
@@ -40,14 +41,16 @@ function Item({ image, tittle, desc, tag, github, live, parallax }: ProjectInter
                     </div>
                     <div className="project-details">
                         <div className="project-tag">
-                            {tag?.map((e) => {
-                                return <div className="tag">{e}</div>
+                            {tag?.map((item, index) => {
+                                if (index < 2) return <div className="tag">{item.name}</div>
+                                if (index === 2) return <div className="tag-plus">+{tag.length - index}</div>
                             })}
                         </div>
-                        <div className="project-redirect">
+                        <button className="font-[Alata] h-10 w-full bg-white/4 border-2 shadow-none rounded-md text-[#F7F7F7] text-[16px]">Show detail</button>
+                        {/* <div className="project-redirect">
                             <p><a href={github} className={`${github !== undefined ? "enabled" : "disabled"}`}>{`< View on Github`}</a></p>
                             <p><a href={live} className={`${live !== undefined ? "enabled" : "disabled"}`}>{`Live View >`}</a></p>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </motion.div>

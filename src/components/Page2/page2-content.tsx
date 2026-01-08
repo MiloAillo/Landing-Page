@@ -1,16 +1,16 @@
+import type { techstackDataTypes } from "@/types/getAllDataTypes"
 import "./page2-content.css"
 import Item from "./tech-item"
 
 interface Page2ContentInterface {
-    selectedTech: "Languages" | "Frameworks" | "Tools" | "Databases"
-    toLanguages:  () => void
-    toFrameworks: () => void
-    toTools: () => void
-    toDatabases: () => void
+    selectedTech: string | null
+    techData: string[]
+    techstacksData: techstackDataTypes
+    setTech: (tech: string) => void
     parallax: boolean
 }
 
-function Page2Content({ selectedTech, toLanguages, toFrameworks, toTools, toDatabases, parallax }: Page2ContentInterface) {
+function Page2Content({ selectedTech, setTech, techData, techstacksData, parallax }: Page2ContentInterface) {
     return (
         <div className={parallax ? "content" : "content-mobile"}>
             <div className="tittle">
@@ -18,13 +18,19 @@ function Page2Content({ selectedTech, toLanguages, toFrameworks, toTools, toData
                 <p className={parallax ? "tittle-name" : "tittle-name-mobile"}>Tech Stacks</p>
             </div>
             <div className={parallax ? "buttons" : "buttons-mobile"}>
-                <button className={`${parallax ? "button" : "button-mobile"} lang ${selectedTech === "Languages" ? "selected" : "" }`} onClick={toLanguages}>Languages</button>
-                <button className={`${parallax ? "button" : "button-mobile"} fw ${selectedTech === "Frameworks" ? "selected" : "" }`} onClick={toFrameworks}>Frameworks & Libraries</button>
-                <button className={`${parallax ? "button" : "button-mobile"} lang ${selectedTech === "Tools" ? "selected" : "" }`} onClick={toTools}>Tools</button>
-                <button className={`${parallax ? "button" : "button-mobile"} lang ${selectedTech === "Databases" ? "selected" : "" }`} onClick={toDatabases}>Databases</button>
+                {techData.map(tech => (
+                    <button onClick={() => setTech(tech)} className={`${parallax ? "button" : "button-mobile"} lang ${selectedTech === tech ? "selected" : "" }`}>{tech}</button>
+                ))}
             </div>
             <div className="items">
-                <div className={`items-container items-languages ${selectedTech !== "Languages" ? "remove" : ""}`}>
+                {techstacksData.map(techstack => (
+                    <div className={`items-container items-languages ${selectedTech !== techstack.name ? "remove" : ""}`}>
+                        {techstack.TechStackItem.map(item => (
+                            <Item name={item.name} image={item.image} desc={item.description} parallax={parallax}/>
+                        ))}
+                    </div>
+                ))}
+                {/* <div className={`items-container items-languages ${selectedTech !== "Languages" ? "remove" : ""}`}>
                      <Item lowercaseName={"javascript"} name={"Javascript"} image={"javascript.png"} desc={"The language i used since the beginning of my journey"} parallax={parallax}/>
                     <Item lowercaseName={"typescript"} name={"Typescript"} image={"typescript.png"} desc={"Supercharged Javascript i use to avoid production bugs nightmare"} parallax={parallax}/>
                     <Item lowercaseName={"php"} name={"PHP"} image={"php.png"} desc={"A language i had to learn to use Laravel"} parallax={parallax}/>
@@ -43,7 +49,7 @@ function Page2Content({ selectedTech, toLanguages, toFrameworks, toTools, toData
                 </div>
                 <div className={`items-container items-databases ${selectedTech !== "Databases" ? "remove" : ""}`}>
                     <Item lowercaseName={"mysql"} name={"MySQL"} image={"mysql.png"} desc={"Relational database management system i always use"} parallax={parallax}/>
-                </div>
+                </div> */}
             </div>
         </div>
     )

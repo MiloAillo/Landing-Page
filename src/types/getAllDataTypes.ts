@@ -23,6 +23,12 @@ type projects = {
 }
 
 export type getAllDataTypes = {
-    techstacks: techstacks[]
+    techStacks: techstacks[]
     projects: projects[]
 }
+
+export type techstackDataTypes = techstacks[]
+
+export type projectDataTypes = projects[]
+
+export type projectTagDataTypes = tags[]
