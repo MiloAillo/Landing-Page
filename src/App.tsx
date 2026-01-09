@@ -5,11 +5,10 @@ import Page1 from './containers/Page1/page1.container'
 import Page2 from './containers/Page2/page2-container'
 import Page3 from './containers/Page3/page3.container'
 import Page4 from './containers/Page4/page4.container'
-import Ender from './components/ender'
 import './App.css'
 import { getAllData } from './api/getAllData'
 import type { getAllDataTypes } from './types/getAllDataTypes'
-import { Rings, ThreeDots, Oval, TailSpin } from 'react-loader-spinner'
+import { TailSpin } from 'react-loader-spinner'
 
 function App() {
   const [ data, setData ] = useState<getAllDataTypes>()
@@ -200,10 +199,6 @@ function App() {
           <div style={{backgroundImage: "url('./Vector.svg')" }}  className='-scale-y-100 bg-repeat-x w-screen h-28 -translate-y-1'  />
         </motion.div>}
     </motion.div>
-  )
-
-  const failedState = (
-    <div>isFailed</div>
   )
 
   return (

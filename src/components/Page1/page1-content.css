@@ -149,10 +149,6 @@
  background-position: center;
 }
 
-.linkedin {
-  /* margin-left: -2.5px; */
-}
-
 @media (max-width: 800px) {
   .content1 {
     display: none;

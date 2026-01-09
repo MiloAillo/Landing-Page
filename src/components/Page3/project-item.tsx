@@ -1,12 +1,11 @@
 import { motion, spring } from "motion/react"
 import "./project-item.css"
-import type { projectDataTypes, projectTagDataTypes } from "@/types/getAllDataTypes"
+import type { projectTagDataTypes } from "@/types/getAllDataTypes"
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTrigger } from "../ui/dialog"
 import { Button } from "../ui/button"
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card"
 
 interface ProjectInterface {
-    image?: string
     tittle: string
     desc: string
     tag?: projectTagDataTypes
@@ -15,7 +14,7 @@ interface ProjectInterface {
     parallax: boolean
 }
 
-function Item({ image, tittle, desc, tag, github, live, parallax }: ProjectInterface) {
+function Item({ tittle, desc, tag, github, live, parallax }: ProjectInterface) {
 
     return (
         <div className={parallax ? "project-item" : "project-item-mobile"}>

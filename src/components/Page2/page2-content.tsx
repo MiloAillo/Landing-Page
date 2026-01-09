@@ -30,11 +30,11 @@ function Page2Content({ selectedTech, setTech, techData, techstacksData, paralla
             <div 
                 className={parallax ? "buttons" : "flex flex-nowrap flex-row justify-start items-start w-full gap-3.5 overflow-scroll"}
             >
-                {!parallax && <div className="flex-shrink-0 w-6" />}
+                {!parallax && <div className="shrink-0 w-6" />}
                 {techData.map(tech => (
                     <button onClick={(e) => {setTech(tech); scrollFocus(e)}} className={`${parallax ? "button" : "button-mobile"} ${selectedTech === tech ? "selected" : "" }`}>{tech}</button>
                 ))}
-                {!parallax && <div className="flex-shrink-0 w-6" />}
+                {!parallax && <div className="shrink-0 w-6" />}
             </div>
             <div className="items">
                 {techstacksData.map(techstack => (

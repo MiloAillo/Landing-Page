@@ -37,10 +37,6 @@ a {
   pointer-events: none;
 }
 
-.pages {
-  /* padding-bottom: -50px; */
-}
-
 .page-plus {
   position: relative;
   display: flex;
