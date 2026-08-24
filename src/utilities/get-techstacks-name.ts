@@ -1,9 +1,15 @@
 import type { getAllDataTypes } from "@/types/getAllDataTypes";
 
 export const getTechstacksName = (data: getAllDataTypes) => {
-    let techstackName: string[] = []
+    if (!data || !data.techStacks || !Array.isArray(data.techStacks)) {
+        return []
+    }
+
+    const techstackName: string[] = []
     data.techStacks.forEach(techstack => {
-        techstackName.push(techstack.name)
+        if (techstack && techstack.name) {
+            techstackName.push(techstack.name)
+        }
     });
 
     return techstackName

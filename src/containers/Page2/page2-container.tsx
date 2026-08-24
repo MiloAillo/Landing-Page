@@ -21,7 +21,7 @@ function Page2({ parallax, data }: mainInterface) {
     setTechstacksData(data.techStacks)
 
     if(techStacksName.length > 0) setSelectedTech(techStacksName[0])
-  }, [])
+  }, [data])
 
   const setTech = (tech: string) => {
     setSelectedTech(tech)

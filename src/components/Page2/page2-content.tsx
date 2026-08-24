@@ -37,9 +37,9 @@ function Page2Content({ selectedTech, setTech, techData, techstacksData, paralla
                 {!parallax && <div className="shrink-0 w-6" />}
             </div>
             <div className="items">
-                {techstacksData.map((techstack, index) => (
-                    <div key={index} className={`items-container items-languages ${selectedTech !== techstack.name ? "remove" : ""}`}>
-                        {techstack.TechStackItem.map((item, idx) => (
+                {techstacksData && Array.isArray(techstacksData) && techstacksData.map((techstack, index) => (
+                    <div key={index} className={`items-container items-languages ${selectedTech !== techstack?.name ? "remove" : ""}`}>
+                        {techstack?.TechStackItem && Array.isArray(techstack.TechStackItem) && techstack.TechStackItem.map((item, idx) => (
                             <Item key={idx} name={item.name} image={item.image} desc={item.description} parallax={parallax}/>
                         ))}
                     </div>
