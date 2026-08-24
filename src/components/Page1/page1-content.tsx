@@ -1,8 +1,8 @@
 import { motion, MotionValue } from 'motion/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "./page1-content.css"
-import type { Ref } from 'react'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import type { Ref } from 'react'
 
 interface Page1ContentInterface {
     card: MotionValue<string>
