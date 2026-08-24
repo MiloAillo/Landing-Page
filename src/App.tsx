@@ -218,11 +218,11 @@ function App() {
           <motion.div key="loading-wrapper">
             {loadingState}
           </motion.div>
-        ) : data ? (
+        ) : (
           <motion.div key="main-content">
             {main}
           </motion.div>
-        ) : null}
+        )}
       </AnimatePresence>
     </div>
   )
