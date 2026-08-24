@@ -1,4 +1,4 @@
-import { motion, spring } from "motion/react"
+import { motion } from "motion/react"
 import "./project-item.css"
 import type { projectTagDataTypes } from "@/types/getAllDataTypes"
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTrigger } from "../ui/dialog"

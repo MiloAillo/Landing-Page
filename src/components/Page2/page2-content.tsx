@@ -1,7 +1,7 @@
 import type { techstackDataTypes } from "@/types/getAllDataTypes"
 import type { MouseEvent } from "react"
 import "./page2-content.css"
-import Item from "./tech-item"
+import Item from "./TechItem"
 import { motion } from "motion/react"
 
 interface Page2ContentInterface {
