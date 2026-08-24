@@ -15,9 +15,8 @@ function Page3({ parallax, data }: mainInterface) {
     const [ projectsData, setProjectsData ] = useState<projectDataTypes>([])
     
     useEffect(() => {
-        console.log(data.projects)
         setProjectsData(data.projects)
-    })
+    }, [data.projects])
 
     const ref1 = useRef(null)
     const ref2 = useRef(null)
