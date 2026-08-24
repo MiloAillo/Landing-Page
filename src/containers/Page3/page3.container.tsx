@@ -3,8 +3,8 @@ import { useScroll, useTransform } from "motion/react"
 import "./page3.container.css"
 import Page1Waves from "../../components/Page1/page1-waves"
 import Page3Content from "../../components/Page3/page3-content"
-import { useEffect, useRef, useState } from "react"
-import type { getAllDataTypes, projectDataTypes } from "@/types/getAllDataTypes"
+import { useRef } from "react"
+import type { getAllDataTypes } from "@/types/getAllDataTypes"
 
 interface mainInterface {
     parallax: boolean
@@ -12,12 +12,6 @@ interface mainInterface {
 }
 
 function Page3({ parallax, data }: mainInterface) {
-    const [ projectsData, setProjectsData ] = useState<projectDataTypes>([])
-    
-    useEffect(() => {
-        setProjectsData(data.projects)
-    }, [data.projects])
-
     const ref1 = useRef(null)
     const ref2 = useRef(null)
     const { scrollYProgress: scrollYProgress1 } = useScroll({
@@ -39,7 +33,7 @@ function Page3({ parallax, data }: mainInterface) {
                 <Page1Waves layer1={layer1} layer2={layer2} layer3={layer3} />
             </div>
             <div className={parallax ? "" : "page3-content-mobile"} ref={ref2}>
-                <Page3Content parallax={parallax} card={card} projectsData={projectsData} />
+                <Page3Content parallax={parallax} card={card} projectsData={data.projects} />
             </div>
         </div>
     )

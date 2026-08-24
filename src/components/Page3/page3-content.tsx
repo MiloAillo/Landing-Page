@@ -18,8 +18,8 @@ function Page3Content({ card, parallax, projectsData }: Page3ContentProps) {
                 <p className={parallax ? "tittle3-name" : "tittle3-name-mobile"}>Projects</p>
             </div>
             <div className={parallax ? "grid grid-cols-1 md:grid-cols-2 gap-3 md:mx-10 lg:mx-25 max-w-250" : "project-items-mobile"}>
-                {projectsData.map(project => (
-                    <Item parallax={parallax} tittle={project.name} desc={project.description} tag={project.tags} github={project.source} live={project.view ? project.view : undefined} />
+                {projectsData.map((project, index) => (
+                    <Item key={index} parallax={parallax} tittle={project.name} desc={project.description} tag={project.tags} github={project.source} live={project.view ? project.view : undefined} />
                 ))}
                 {/* <Item parallax={parallax} image="parallax.png" tittle="Learn Parallax" desc="Me Learning to Implement Parallax Effect." tag={["React", "React Spring"]} github="https://github.com/MiloAillo/Learn-parallax" live="https://learn-parallax-two.vercel.app"/>
                 <Item parallax={parallax}  image="citylocator.png" tittle="City Locator" desc="Search a location complete with detail such as the country, state, latitude, and longitude." tag={["Javascript", "OpenWeatherAPI", "Vanilla"]} github="https://github.com/MiloAillo/City-Locator" live="https://city-locator.vercel.app" />

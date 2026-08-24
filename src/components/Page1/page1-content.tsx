@@ -13,12 +13,12 @@ function Page1Content({card, ref}: Page1ContentInterface) {
     return (
         <motion.div className='main-content' ref={ref} style={{y: card}}>
           <div className='content1'>
-            <div className='pfp'></div>
+            <div className='pfp' role="img" aria-label="Profile picture"></div>
             <div className='card-content'>
               <p className='card-name'>Mischiko Moe</p>
               <p className='card-number'>ID: 14152089147085185</p>
             </div>
-            <div className='card-barcode'></div>
+            <div className='card-barcode' role="img" aria-label="Barcode"></div>
           </div>
           <div className='content2 header'>
             <div className='intro'>

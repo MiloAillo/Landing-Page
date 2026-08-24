@@ -31,16 +31,16 @@ function Page2Content({ selectedTech, setTech, techData, techstacksData, paralla
                 className={parallax ? "buttons" : "flex flex-nowrap flex-row justify-start items-start w-full gap-3.5 overflow-scroll"}
             >
                 {!parallax && <div className="shrink-0 w-6" />}
-                {techData.map(tech => (
-                    <button onClick={(e) => {setTech(tech); scrollFocus(e)}} className={`${parallax ? "button" : "button-mobile"} ${selectedTech === tech ? "selected" : "" }`}>{tech}</button>
+                {techData.map((tech, index) => (
+                    <button key={index} onClick={(e) => {setTech(tech); scrollFocus(e)}} type="button" className={`${parallax ? "button" : "button-mobile"} ${selectedTech === tech ? "selected" : "" }`}>{tech}</button>
                 ))}
                 {!parallax && <div className="shrink-0 w-6" />}
             </div>
             <div className="items">
-                {techstacksData.map(techstack => (
-                    <div className={`items-container items-languages ${selectedTech !== techstack.name ? "remove" : ""}`}>
-                        {techstack.TechStackItem.map(item => (
-                            <Item name={item.name} image={item.image} desc={item.description} parallax={parallax}/>
+                {techstacksData.map((techstack, index) => (
+                    <div key={index} className={`items-container items-languages ${selectedTech !== techstack.name ? "remove" : ""}`}>
+                        {techstack.TechStackItem.map((item, idx) => (
+                            <Item key={idx} name={item.name} image={item.image} desc={item.description} parallax={parallax}/>
                         ))}
                     </div>
                 ))}

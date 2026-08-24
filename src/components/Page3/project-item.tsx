@@ -45,6 +45,7 @@ function Item({ tittle, desc, tag, github, live, parallax }: ProjectInterface) {
                         <div className="project-tag">
                             {tag?.map((item, index) => {
                                 if (index < 2) return   <motion.div
+                                                            key={index}
                                                             whileHover={{
                                                                 scale: 1.15,                                                            }}
                                                         >
@@ -56,7 +57,7 @@ function Item({ tittle, desc, tag, github, live, parallax }: ProjectInterface) {
                                                                 </HoverCardContent>
                                                             </HoverCard>
                                                         </motion.div>
-                                if (index === 2) return <div className="tag-plus">+{tag.length - index}</div>
+                                if (index === 2 && tag) return <div key={index} className="tag-plus">+{tag.length - index}</div>
                             })}
                         </div>
                         <Dialog>
@@ -66,18 +67,19 @@ function Item({ tittle, desc, tag, github, live, parallax }: ProjectInterface) {
                                 <DialogDescription className="font-[Alata] text-base text-[#F7F7F7]/85 flex flex-col gap-15">
                                     <p>{desc}</p>
                                     <div className="flex gap-2 flex-wrap">
-                                        {tag?.map((item) => (
+                                        {tag?.map((item, index) => (
                                             <motion.div
+                                                key={index}
                                                 whileHover={{
                                                     scale: 1.1,
                                                     scaleX: 1.05
                                                 }}
                                             >
                                                 <HoverCard>
-                                                    <HoverCardTrigger><div className="font-[Assistant] font-semilight bg-white/80 text-sm border border-white/0 px-2 py-1 rounded-2xl backdrop-blur-2xl text-black/80 text-center">{item.name}</div></HoverCardTrigger>
+                                                    <HoverCardTrigger><div className="font-[Assistant] font-semilight bg-white/80 text-sm border border-white/0 px-2 py-1 rounded-2xl backdrop-blur-2xl text-black/80 text-center">{item?.name || "Unknown"}</div></HoverCardTrigger>
                                                     <HoverCardContent className="w-fit max-w-100 flex flex-col gap-1 bg-white/35 backdrop-blur-sm backdrop-invert-100">
-                                                        <p className="font-[Assistant] font-bold text-[18px]">{item.name}</p>
-                                                        <p className="font-[Assistant] ">{item.description}</p>
+                                                        <p className="font-[Assistant] font-bold text-[18px]">{item?.name || "Unknown"}</p>
+                                                        <p className="font-[Assistant] ">{item?.description || ""}</p>
                                                     </HoverCardContent>
                                                 </HoverCard>
                                             </motion.div>
@@ -87,7 +89,7 @@ function Item({ tittle, desc, tag, github, live, parallax }: ProjectInterface) {
                                 <DialogFooter>
                                     <div className="flex w-full gap-2">
                                         <a className="flex-1 w-full" href={github}><Button className="bg-white/80 shadow-none border-0 flex-1 text-black/80 hover:bg-white w-full font-[Alata]">Source</Button></a>
-                                        <a className="flex-1 w-full" href={live}><Button className="bg-white/80 flex-1 w-full shadow-none border-0 text-black/80 hover:bg-white font-[Alata]" disabled={live ? false : true}>Live view</Button></a>
+                                        <a className="flex-1 w-full" href={live}><Button className="bg-white/80 flex-1 w-full shadow-none border-0 text-black/80 hover:bg-white font-[Alata]" disabled={!live} aria-label={live ? "View live site" : "Live view not available"}>Live view</Button></a>
                                     </div>
                                 </DialogFooter>
                             </DialogContent>

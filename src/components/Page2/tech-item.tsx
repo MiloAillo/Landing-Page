@@ -9,12 +9,13 @@ interface ItemInterface {
 }
 
 function Item({image, name, desc, parallax}: ItemInterface) {
+    const imageUrl = backendUrlWithPrefix && image ? backendUrlWithPrefix + image : undefined;
     return (
         <div className={`${parallax ? "item-container" : "item-container-mobile"} `}>
             <div className="image-container">
                 <div className="image" 
                 style={{
-                background: `url(${backendUrlWithPrefix+image})`,
+                background: imageUrl ? `url(${imageUrl})` : "transparent",
                 width: "100%",
                 height: "100%",
                 backgroundPosition: "center",
