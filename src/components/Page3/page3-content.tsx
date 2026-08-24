@@ -11,6 +11,20 @@ interface Page3ContentProps {
 }
 
 function Page3Content({ card, parallax, projectsData }: Page3ContentProps) {
+    if (!projectsData || !Array.isArray(projectsData)) {
+        return (
+            <motion.div className="page3-content" style={{ y: card }}>
+                <div className="tittle3">
+                    <p className="tittle3-dialogue">This is my</p>
+                    <p className={parallax ? "tittle3-name" : "tittle3-name-mobile"}>Projects</p>
+                </div>
+                <div className={parallax ? "grid grid-cols-1 md:grid-cols-2 gap-3 md:mx-10 lg:mx-25 max-w-250" : "project-items-mobile"}>
+                    <p>No projects available</p>
+                </div>
+            </motion.div>
+        )
+    }
+
     return (
         <motion.div className="page3-content" style={{ y: card }}>
             <div className="tittle3">
