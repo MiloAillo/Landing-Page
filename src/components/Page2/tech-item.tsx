@@ -1,4 +1,4 @@
-import { backendUrl, backendUrlWithPrefix } from "@/lib/variables"
+import { backendUrlWithPrefix } from "@/lib/variables"
 import "./tech-item.css"
 
 interface ItemInterface {
@@ -9,7 +9,6 @@ interface ItemInterface {
 }
 
 function Item({image, name, desc, parallax}: ItemInterface) {
-    console.log(backendUrl+image)
     return (
         <div className={`${parallax ? "item-container" : "item-container-mobile"} `}>
             <div className="image-container">
