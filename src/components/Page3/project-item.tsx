@@ -29,7 +29,7 @@ function Item({ tittle, desc, tag, github, live, parallax }: ProjectInterface) {
                     boxShadow: "0 1px 10px -1px"
                 }}
                 transition={{
-                    type: spring,
+                    type: "spring",
                     stiffness: 300,
                     damping: 15,
                     mass: 1
