@@ -38,22 +38,29 @@ function App() {
   // Lenis Smooth Scrolling
   useEffect(() => {
     const lenis = new Lenis()
+    let rafId: number
     function raf(time: number) {
       lenis.raf(time)
-      requestAnimationFrame(raf)
+      rafId = requestAnimationFrame(raf)
     }
-    requestAnimationFrame(raf)
+    rafId = requestAnimationFrame(raf)
+    return () => {
+      cancelAnimationFrame(rafId)
+      lenis.destroy()
+    }
   }, [])
 
   //viewport tracker
   const [width, setWidth] = useState(window.innerWidth)
   const [parallax, setParallax] = useState<boolean>(false)
   useEffect(() => {
-    const resize = () => setWidth(window.innerWidth)
-    addEventListener("resize", resize);
-    (() => width >= 800 ? setParallax(true) : setParallax(false)) ();
-    console.log(width, parallax)
-    return () => removeEventListener("resize", resize)
+    const handleResize = () => setWidth(window.innerWidth)
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
+  useEffect(() => {
+    setParallax(width >= 800)
   }, [width])
 
   // background parallax
