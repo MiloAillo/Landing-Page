@@ -1,7 +1,6 @@
 import { motion, MotionValue } from 'motion/react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Linkedin } from 'lucide-react'
 import "./page1-content.css"
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import type { Ref } from 'react'
 
 interface Page1ContentInterface {
@@ -40,7 +39,7 @@ function Page1Content({card, ref}: Page1ContentInterface) {
                   <p className='social-link-tittle'><a href='mailto:fariskahlilhaidar@gmail.com'>fariskahlilhaidar@gmail.com</a></p>
                 </div>
                 <div className='social-link'>
-                  <FontAwesomeIcon icon={faLinkedin} size='2x' className='social-link-logo linkedin' />
+                  <Linkedin size={32} className='social-link-logo linkedin' />
                   <p className='social-link-tittle'><a href='https://www.linkedin.com/in/faris-kahlil-haidar-7bb35031b/'>Faris Kahlil Haidar</a></p>
                 </div>
               </div>

@@ -1,14 +1,17 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, lazy, Suspense } from 'react'
 import Lenis from 'lenis'
 import { AnimatePresence, motion, useScroll, useTransform } from 'motion/react'
-import Page1 from './containers/Page1/page1.container'
-import Page2 from './containers/Page2/page2-container'
-import Page3 from './containers/Page3/page3.container'
-import Page4 from './containers/Page4/page4.container'
 import './App.css'
 import { getAllData } from './api/getAllData'
 import type { getAllDataTypes } from './types/getAllDataTypes'
 import { TailSpin } from 'react-loader-spinner'
+
+const Page1 = lazy(() => import('./containers/Page1/page1.container'))
+const Page2 = lazy(() => import('./containers/Page2/page2-container'))
+const Page3 = lazy(() => import('./containers/Page3/page3.container'))
+const Page4 = lazy(() => import('./containers/Page4/page4.container'))
+
+const loadingSpinner = <div className="flex justify-center items-center h-screen"><TailSpin height={50} width={50} color="#FFFFFF" /></div>
 
 function App() {
   const [ data, setData ] = useState<getAllDataTypes>()
@@ -54,9 +57,16 @@ function App() {
   const [width, setWidth] = useState(window.innerWidth)
   const [parallax, setParallax] = useState<boolean>(false)
   useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth)
+    let timeoutId: ReturnType<typeof setTimeout>
+    const handleResize = () => {
+      clearTimeout(timeoutId)
+      timeoutId = setTimeout(() => setWidth(window.innerWidth), 150)
+    }
     window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
+    return () => {
+      window.removeEventListener("resize", handleResize)
+      clearTimeout(timeoutId)
+    }
   }, [])
 
   useEffect(() => {
@@ -83,10 +93,12 @@ function App() {
       }}
     >
       <div className='pages'>
-        <Page1 parallax={parallax} />
-        <Page2 parallax={parallax} data={data ? data : {projects: [], techStacks: []}}/>
-        <Page3 parallax={parallax} data={data ? data : {projects: [], techStacks: []}}/>
-        <Page4 parallax={parallax}/>
+        <Suspense fallback={loadingSpinner}>
+          <Page1 parallax={parallax} />
+          <Page2 parallax={parallax} data={data ? data : {projects: [], techStacks: []}}/>
+          <Page3 parallax={parallax} data={data ? data : {projects: [], techStacks: []}}/>
+          <Page4 parallax={parallax}/>
+        </Suspense>
         {/* <Ender /> */}
         <div className='relative flex justify-center items-center md:items-start w-full h-10 md:h-25 bg-[#2C2C2C] z-1 text-center md:leading-41 overflow-y-hidden md:-mt-25 text-[rgba(255,255,255,0.781)]'>
             <p>&copy; 2025-2026 Faris Kahlil Haidar. All Rights Reserved.</p>
